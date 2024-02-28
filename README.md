@@ -1,6 +1,6 @@
 # chezmoi-snippets
 
-Common snippets that I use.
+Common snippets that I use. This is really just intended for my purposes, but you're more than welcome to poke around.
 
 ## Usage (easy)
 
