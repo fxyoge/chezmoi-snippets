@@ -1,0 +1,11 @@
+{{- if eq 0 (len $.input.path) -}}
+    {{- includeTemplate $.input.file $ -}}
+{{- else -}}
+    {{- $args := deepCopy $ -}}
+    {{- $_ := set $args "input" (dict
+        "path" ($.input.path | rest)
+        "file" $.input.file) -}}
+    {{- $key := $.input.path | first -}}
+    {{- $g := includeTemplate "snippets/generate-config" $args | fromYaml -}}
+    {{- dict $key $g | toYaml -}}
+{{- end -}}

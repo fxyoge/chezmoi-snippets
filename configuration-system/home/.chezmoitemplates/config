@@ -1,0 +1,14 @@
+{{- $chezmoiTemplates := joinPath $.chezmoi.sourceDir ".chezmoitemplates" -}}
+{{- $files := joinPath $chezmoiTemplates "config-*" | glob -}}
+{{- $mutable := dict "c" dict -}}
+{{- range $file := $files -}}
+    {{- $c := $mutable.c -}}
+    {{- $path := $file | base | splitList "-" -}}
+    {{- $args := deepCopy $ -}}
+    {{- $_ := set $args "input" (dict
+        "path" $path
+        "file" $file) -}}
+    {{- $g := includeTemplate "snippets/generate-config" $args | fromYaml -}}
+    {{- $_ := set $mutable "c" (merge $g $c) -}}
+{{- end -}}
+{{- $mutable.c.config | toYaml -}}
