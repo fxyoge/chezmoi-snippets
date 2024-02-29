@@ -4,8 +4,6 @@ A common place to put computed values.
 
 ## Usage
 
-Given the following files:
-
 ```sh
 .chezmoitemplates/
   snippets/
