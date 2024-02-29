@@ -1,0 +1,33 @@
+{{- $mutable := dict
+    "repos" list
+    "tags"  dict
+    "json"  list -}}
+
+{{- if joinPath $.chezmoi.sourceDir ".chezmoitemplates/config-vscode-projectManager-repos" | lstat -}}
+    {{- $_ := set $mutable "repos" (includeTemplate "config-vscode-projectManager-repos" $ | fromYaml) -}}
+{{- end -}}
+{{- if joinPath $.chezmoi.sourceDir ".chezmoitemplates/config-vscode-projectManager-tags" | lstat -}}
+    {{- $_ := set $mutable "tags" (includeTemplate "config-vscode-projectManager-tags" $ | fromYaml) -}}
+{{- end -}}
+
+{{- $_ := set $mutable "repos" ($mutable.repos | uniq | sortAlpha) -}}
+
+{{- range $repo := $mutable.repos -}}
+    {{- $json := $mutable.json -}}
+
+    {{- $path := regexReplaceAllLiteral "^~" $repo $.chezmoi.homeDir -}}
+
+    {{- $nameArgs := $ | merge (dict "inputs" (dict "path" $repo)) -}}
+    {{- $name := includeTemplate "snippets/vscode-projectManager-nameGen-default" $nameArgs -}}
+
+    {{- $tags := $mutable.tags | dig $name list | uniq | sortAlpha -}}
+    {{- $json := append $json (dict
+        "name"     $name
+        "rootPath" $repo
+        "paths"    list
+        "tags"     $tags
+        "enabled"  true) -}}
+    {{- $_ := set $mutable "json" $json -}}
+{{- end -}}
+
+{{- $mutable.json | toPrettyJson -}}

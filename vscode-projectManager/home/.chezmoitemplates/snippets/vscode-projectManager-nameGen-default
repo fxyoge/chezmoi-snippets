@@ -1,0 +1,7 @@
+{{- $path := $.inputs.path -}}
+
+{{- if eq $path (joinPath $.chezmoi.homeDir ".local/share/chezmoi") -}}
+    {{- print $.chezmoi.username "/dotfiles" -}}
+{{- else -}}
+    {{- slice ($path | splitList "/" | reverse) 0 2 | reverse | join "/" -}}
+{{- end -}}

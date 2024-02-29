@@ -1,0 +1,3 @@
+{{- if eq $.chezmoi.os "windows" -}}
+    {{- includeTemplate "snippets/vscode-projectManager-projects.json" $ -}}
+{{- end -}}
