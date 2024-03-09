@@ -1,3 +1,4 @@
+{{/* Automatically generated from chezmoi-snippets. */}}
 {{- $chezmoiTemplates := joinPath $.chezmoi.sourceDir ".chezmoitemplates" -}}
 {{- $files := joinPath $chezmoiTemplates "config-*" | glob -}}
 {{- $mutable := dict "c" dict -}}

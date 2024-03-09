@@ -1,3 +1,4 @@
+{{/* Automatically generated from chezmoi-snippets. */}}
 {{- $mutable := dict
     "repos" list
     "tags"  dict

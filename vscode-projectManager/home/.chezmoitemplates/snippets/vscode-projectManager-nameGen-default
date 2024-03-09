@@ -1,3 +1,4 @@
+{{/* Automatically generated from chezmoi-snippets. */}}
 {{- $path := $.inputs.path -}}
 
 {{- if eq $path (joinPath $.chezmoi.homeDir ".local/share/chezmoi") -}}

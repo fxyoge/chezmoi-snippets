@@ -1,3 +1,4 @@
+{{/* Automatically generated from chezmoi-snippets. */}}
 {{- if eq 0 (len $.input.path) -}}
     {{- includeTemplate $.input.file $ -}}
 {{- else -}}
