@@ -13,4 +13,7 @@ dot_config/
     $IDE_NAME/
       keymaps/
         chezmoi-managed.xml.tmpl  # (imported) The keymap, for each IDE
+      options/
+        linux/
+          keymap.xml  # (imported) Sets the active keymap, for each IDE
 ```
