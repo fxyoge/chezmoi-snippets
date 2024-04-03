@@ -1,8 +1,69 @@
 <keymap version="1" name="chezmoi-managed" parent="VSCode">
+  <action id="Arrangement.Rule.Edit" />
+  <action id="BookmarksView.Rename" />
+  <action id="ChangesView.Rename" />
+  <action id="ChangesView.ShelveSilently" />
+  <action id="ChangesView.ToggleCommitUi" />
+  <action id="CheckinProject" />
+  <action id="CommentByBlockComment" />
+  <action id="CommentByLineComment">
+    <keyboard-shortcut first-keystroke="ctrl k" second-keystroke="ctrl c" />
+  </action>
+  <action id="Console.TableResult.EditValue">
+    <keyboard-shortcut first-keystroke="enter" />
+    <keyboard-shortcut first-keystroke="alt enter" />
+  </action>
+  <action id="Console.TableResult.GotoReferencedResult">
+    <mouse-shortcut keystroke="button1 doubleClick" />
+    <keyboard-shortcut first-keystroke="enter" />
+    <keyboard-shortcut first-keystroke="alt enter" />
+  </action>
+  <action id="CopyElement" />
+  <action id="Debugger.EditArrayFilter" />
+  <action id="Debugger.EditCustomField" />
   <action id="ExternalSystem.ProjectRefreshAction" />
+  <action id="ExpressionTypeInfo" />
+  <action id="FindUsages">
+    <keyboard-shortcut first-keystroke="f12" />
+  </action>
   <action id="ForceOthersToFollowAction" />
+  <action id="Git.Commit.Stage" />
+  <action id="Git.Rename.Local.Branch" />
+  <action id="Git.Reword.Commit" />
+  <action id="GotoImplementation">
+    <keyboard-shortcut first-keystroke="shift f12" />
+  </action>
+  <action id="GotoNextError" />
+  <action id="Graph.RouteEdges" />
+  <action id="GuiDesigner.EditComponent" />
+  <action id="GuiDesigner.EditGroup" />
+  <action id="JumpToLastWindow" />
+  <action id="MethodHierarchy" />
+  <action id="MethodHierarchy.BaseOnThisMethod" />
+  <action id="OpenInRightSplit" />
+  <action id="OverrideMethods" />
   <action id="PySyncPythonRequirements">
     <keyboard-shortcut first-keystroke="shift ctrl o" />
   </action>
+  <action id="RenameElement">
+    <keyboard-shortcut first-keystroke="f2" />
+  </action>
+  <action id="ReplaceInPath">
+    <keyboard-shortcut first-keystroke="shift ctrl h" />
+  </action>
+  <action id="RestoreDefaultLayout" />
+  <action id="Resume">
+    <keyboard-shortcut first-keystroke="f5" />
+  </action>
+  <action id="RunClass">
+    <keyboard-shortcut first-keystroke="shift ctrl r" />
+  </action>
+  <action id="SearchEverywhere">
+    <keyboard-shortcut first-keystroke="shift ctrl p" />
+  </action>
+  <action id="ShelvedChanges.Rename" />
   <action id="SplitChooser.Duplicate" />
+  <action id="Table-startEditing" />
+  <action id="Tree-startEditing" />
+  <action id="XDebugger.SetValue" />
 </keymap>
